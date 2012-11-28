@@ -41,6 +41,7 @@ describe SemVer do
         example { SemVer.parse('1.0.0-rc16').should > SemVer.parse('1.0.0-rc15') }
         example { SemVer.parse('1.0.1-rc14').should > SemVer.parse('1.0.0-rc15') }
         example { SemVer.parse('1.0.1-rc15').should > SemVer.parse('1.0.0-rc15') }
+        example { SemVer.parse('v1.0.0-rc15').should == SemVer.parse('1.0.0-rc15') }
       end
     end
     
