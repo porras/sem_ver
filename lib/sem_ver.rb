@@ -56,10 +56,14 @@ class SemVer
   private
   
   def prerelease_value
-    prerelease ? prerelease.chars.map {|c| c.ord} : [Float::INFINITY]
+    prerelease ? prerelease.bytes.to_a : [Float::INFINITY]
   end
   
   def match
     @match ||= @spec.match(/^v?(\d+)\.(\d+)\.(\d+)(\-(\w+))?$/)
   end
+end
+
+unless defined?(Float::INFINITY)
+  Float::INFINITY = +1.0/0.0
 end
