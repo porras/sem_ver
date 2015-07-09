@@ -1,15 +1,22 @@
-Gem::Specification.new do |s|
-  s.name        = 'sem_ver'
-  s.version     = '0.1.1'
-  s.date        = Date.today
-  s.authors     = ['Sergio Gil']
-  s.email       = ['sgilperez@gmail.com']
-  s.homepage    = 'http://github.com/porras/sem_ver'
-  s.summary     = 'Semantic Version parser'
-  s.description = 'Semantic Version parser'
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-  s.files         = Dir['lib/**/*.rb'] + ['README.md']
-  s.test_files    = Dir['spec/**/*.rb']
-  
-  s.require_paths = ['lib']
+Gem::Specification.new do |spec|
+  spec.name        = 'sem_ver'
+  spec.version     = '0.2.0'
+  spec.authors     = ['Sergio Gil']
+  spec.email       = ['sgilperez@gmail.com']
+  spec.homepage    = 'http://github.com/porras/sem_ver'
+  spec.summary     = 'Semantic Version parser'
+  spec.description = 'Semantic Version parser'
+
+  spec.files         = Dir['lib/**/*.rb'] + ['README.md']
+  spec.test_files    = Dir['spec/**/*.rb']
+
+  spec.require_paths = ['lib']
+
+  spec.add_development_dependency('bundler', '~> 1.3')
+  spec.add_development_dependency('rspec')
+  spec.add_development_dependency('rake')
 end
